@@ -14,3 +14,27 @@ parameters:
 sylius_shop:
     product_grid:
         include_all_descendants: true
+
+sylius_product:
+    resources:
+        product:
+            classes:
+                controller: Acme\SyliusExamplePlugin\Controller\TestController
+                repository: Acme\SyliusExamplePlugin\Repository\ProductRepository
+
+sylius_grid:
+    grids:
+        sylius_admin_product_review:
+            fields:
+                title:
+                    enabled: false
+                date:
+                    label: "When was it added?"
+            filters:
+                title:
+                    enabled: false
+            actions:
+                item:
+                    delete:
+                        type: delete
+                        enabled: false
